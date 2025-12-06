@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .box {
+            width: 300px;
+            margin: 80px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h2 { text-align: center; }
+    </style>
+
+    <script>
+        function login() {
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            // Username & password terbaru
+            const validUser = "ridho";
+            const validPass = "sultan";
+
+            if (user === validUser && pass === validPass) {
+                alert("Login Berhasil!");
+
+                document.body.innerHTML = "<h1 style='text-align:center;'>Login Sukses</h1>";
+                return false;
+
+            } else {
+                alert("Login Gagal! Username atau password salah.");
+                return false; 
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Form Login</h2>
+
+        <form onsubmit="return login();">
+            <label>Username :</label><br>
+            <input type="text" id="username" required><br><br>
+
+            <label>Password :</label><br>
+            <input type="password" id="password" required><br><br>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .box {
+            width: 300px;
+            margin: 80px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h2 { text-align: center; }
+    </style>
+
+    <script>
+        function login() {
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            // Username & password terbaru
+            const validUser = "ridho";
+            const validPass = "sultan";
+
+            if (user === validUser && pass === validPass) {
+                alert("Login Berhasil!");
+
+                document.body.innerHTML = "<h1 style='text-align:center;'>Login Sukses</h1>";
+                return false;
+
+            } else {
+                alert("Login Gagal! Username atau password salah.");
+                return false; 
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Form Login</h2>
+
+        <form onsubmit="return login();">
+            <label>Username :</label><br>
+            <input type="text" id="username" required><br><br>
+
+            <label>Password :</label><br>
+            <input type="password" id="password" required><br><br>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
