@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">Nama :</label>
+        <input type="text" id="name" placeholder="Masukan nama anda"><span id="errorName"></span>
+        <br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" placeholder="Masukan email anda"><span id="errorEmail"></span>
+        <br>
+
+        <label for="jam">Jam Keberangkatan :</label>
+        <input type="time" id="jam"><span id="errorJam"></span>
+        <br>
+
+        <label for="tujuan">Tujuan :</label>
+        <input type="text" id="tujuan" placeholder="Masukan tujuan anda"><span id="errorTujuan"></span>
+        <br>
+
+        <label for="tiket">Jumlah Tiket :</label>
+        <input type="number" id="tiket" placeholder="Masukan jumlah tiket"><span id="errorTiket"></span>
+        <br><br>
+
+        <input type="button" value="Submit" onclick="formvalidation()">
+    </form>
+
+    <div>
+        <h1 id="hasil"></h1>
+        <p id="hasilName"></p>
+        <p id="hasilEmail"></p>
+        <p id="hasilJam"></p>
+        <p id="hasilTujuan"></p>
+        <p id="hasilTiket"></p>
+    </div>
+
+    <script>
+        function formvalidation() {
+            let nama = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let jam = document.getElementById("jam").value;
+            let tujuan = document.getElementById("tujuan").value;
+            let tiket = document.getElementById("tiket").value;
+
+            document.getElementById("hasil").innerHTML = "Validasi Data";
+
+            // Reset error
+            document.getElementById("errorName").innerHTML = "";
+            document.getElementById("errorEmail").innerHTML = "";
+            document.getElementById("errorJam").innerHTML = "";
+            document.getElementById("errorTujuan").innerHTML = "";
+            document.getElementById("errorTiket").innerHTML = "";
+
+            // Validasi benar
+            if (
+                nama.toLowerCase() === "ridho" &&
+                email === "msultanridho111@gmail.com" &&
+                jam === "06:00" &&
+                tujuan.toLowerCase() === "kalimantan" &&
+                tiket === "3"
+            ) {
+                document.getElementById("hasilName").innerHTML = "Nama Pelanggan : " + nama;
+                document.getElementById("hasilEmail").innerHTML = "Email : " + email;
+                document.getElementById("hasilJam").innerHTML = "Jam Keberangkatan : " + jam;
+                document.getElementById("hasilTujuan").innerHTML = "Tujuan : " + tujuan;
+                document.getElementById("hasilTiket").innerHTML = "Jumlah Tiket : " + tiket;
+            } else {
+                // Jika salah
+                if (nama.toLowerCase() !== "ridho") {
+                    document.getElementById("errorName").innerHTML = " DATA TIDAK VALID";
+                    document.getElementById("errorName").style.color = "red";
+                }
+
+                if (email !== "msultanridho111@gmail.com") {
+                    document.getElementById("errorEmail").innerHTML = " DATA TIDAK VALID";
+                    document.getElementById("errorEmail").style.color = "red";
+                }
+
+                if (jam !== "06:00") {
+                    document.getElementById("errorJam").innerHTML = " DATA TIDAK VALID";
+                    document.getElementById("errorJam").style.color = "red";
+                }
+
+                if (tujuan.toLowerCase() !== "kalimantan") {
+                    document.getElementById("errorTujuan").innerHTML = " DATA TIDAK VALID";
+                    document.getElementById("errorTujuan").style.color = "red";
+                }
+
+                if (tiket !== "3") {
+                    document.getElementById("errorTiket").innerHTML = " DATA TIDAK VALID";
+                    document.getElementById("errorTiket").style.color = "red";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
