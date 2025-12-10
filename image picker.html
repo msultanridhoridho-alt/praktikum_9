@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Picker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #preview {
+            margin-top: 20px;
+            width: 300px;
+            height: auto;
+            border: 1px solid #ccc;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Image Picker</h2>
+
+    <select id="imageSelect" onchange="showImage()">
+        <option value="">-- Pilih Hewan --</option>
+        <option value="kingkong.jpg">Gorila</option>
+        <option value="kucing.jpg">Kucing</option>
+        <option value="elang.jpg">Elang</option>
+    </select>
+
+    <br><br>
+
+    <img id="preview" src="" alt="Preview Gambar">
+
+    <script>
+        function showImage() {
+            let select = document.getElementById("imageSelect");
+            let imgName = select.value;
+            let preview = document.getElementById("preview");
+
+            if (imgName !== "") {
+                preview.style.display = "block";
+                preview.src = "img/" + imgName;
+
+                alert("Ini gambar " + imgName);
+            } else {
+                preview.style.display = "none";
+                preview.src = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
